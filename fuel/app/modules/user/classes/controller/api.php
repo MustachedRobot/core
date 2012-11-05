@@ -91,5 +91,25 @@ class Controller_Api extends \Controller_Api
 
 	}
 
+	public function post_login()
+	{
+		$u = \Input::json();
+		$user = $u['login'];
+		$password = $u['password'];
+		
+		$auth = \Auth::instance();
+
+		$res = $auth->validate_user($user, $password);
+
+		if(!$res){
+			$response = 0;
+		}
+		else {
+			$response = 1;
+		}		
+		$this->response(array('logged' => $response));
+		
+	}
+
 
 }

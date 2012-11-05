@@ -8,15 +8,18 @@ return array(
 	/**** PUBLIC ROUTING ****/
 
 	/**** API ROUTING *****/
+	'api/user/login'          => 'user/api/login',
 	'api/users'               => 'user/api/users',
 	'api/users/here'          => 'user/api/here',
 	'api/users/here/(:id)'    => 'user/api/here/$1',
 	'api/user/(:id)/checkins' => 'checkin/api/user_checkins/$1',
 	'api/user/(:id)/skills'   => 'user/api/user_skills/$1',
 	'api/user/(:id)'          => 'user/api/user/$1',
+
 	'api/seats'               => 'user/api/seats',
 
 	'api/checkins'            => 'checkin/api/checkins',
+	'api/checkin'             => 'checkin/api/checkin',
 	'api/checkins/(asc|desc)' => 'checkin/api/checkins/$1',
 
 	'api/checkins/user/(:id)' => 'checkin/api/user/$1',
