@@ -52,7 +52,7 @@ return array(
 	|	array('admin' => '1234')
 	|
 	*/
-	'valid_logins' => array('admin' => '1234'),
+	'valid_logins' => array('admin' => '1234', 'mobile_app' => '1234'),
 
 	/*
 	| Ignore HTTP_ACCEPT

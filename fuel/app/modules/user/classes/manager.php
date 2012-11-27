@@ -126,7 +126,7 @@ class Manager
 						->from('companies')			
 						->where('companies.id', '=', $u['company_id'])
 						->execute()
-						->as_array();
+						->current();
 
 					$u['company'] = $c;
 				break;
