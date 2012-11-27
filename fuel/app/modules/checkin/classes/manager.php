@@ -100,7 +100,7 @@ class Manager
 		}
 		else
 		{
-			return 'mustached.checkin.add.alreadyThere';
+			return __('mustached.checkin.add.alreadyThere');
 		}		
 	
 	}
