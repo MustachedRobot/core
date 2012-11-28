@@ -47,11 +47,9 @@ class Twig_Fuel_Extension extends Twig_Extension
 			'base_url'      => new Twig_Function_Function('Uri::base'),
 			'uri_segment'   => new Twig_Function_Function('Uri::segment'),
 			'uri_segments'  => new Twig_Function_Function('Uri::segments'),
-			'current_url'   => new Twig_Function_Function('Uri::string'),
-
+			
 			'config'        => new Twig_Function_Function('Config::get'),
 			'lang'          => new Twig_Function_Function('Lang::get'),
-
 
 			'form_open'     => new Twig_Function_Function('Form::open'),
 			'form_close'    => new Twig_Function_Function('Form::close'),
@@ -73,13 +71,14 @@ class Twig_Fuel_Extension extends Twig_Extension
 			'asset_js'      => new Twig_Function_Function('Asset::js'),
 			'asset_img'     => new Twig_Function_Function('Asset::img'),
 			'asset_render'  => new Twig_Function_Function('Asset::render'),
-
-			'avatar'        => new Twig_Function_Function('Mustached\Helper::avatar')
+			// Mustached Migration Warning : add the functions below
+			'avatar'        => new Twig_Function_Function('Mustached\Helper::avatar'),
+			'current_url'   => new Twig_Function_Function('Uri::string'),
 		);
 	}
 
 	/**
-	 * Provides the url() functionality.  Generates a full url (including
+	 * Provides the url() functionality. Generates a full url (including
 	 * domain and index.php).
 	 *
 	 * @param   string  URI to make a full URL for (or name of a named route)
