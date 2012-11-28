@@ -7,17 +7,19 @@
 		<img src="{{ url('/assets/img/custom/coworkingLogo.png') }}" class="coworkingLogo" alt=""/>
 		<h2 class="light">{{ lang('mustached.checkin.add.title') }}</h2>
 		{% if geolocation %}
-		<div id="geolocationLoader" data-latitude={{ latitude }} data-longitude={{ longitude }} data-accuracy={{ accuracy }}>
+		<div id="geolocationLoader" class="geolocation" data-latitude={{ latitude }} data-longitude={{ longitude }} data-accuracy={{ accuracy }}>
+			<div class="geolocation-marker"></div>
 			<p>{{ lang('mustached.checkin.geolocation.wait') }}</p>
 		</div>
-		<div id="locationError" style="display:none" 
+		<div id="locationError" class="geolocation" style="display:none" 
 						data-compatible="{{ lang('mustached.checkin.geolocation.error.compatible') }}"
 						data-timeout="{{ lang('mustached.checkin.geolocation.error.timeout') }}"
 						data-permission="{{ lang('mustached.checkin.geolocation.error.permission') }}"
 						data-unavailable="{{ lang('mustached.checkin.geolocation.error.unavailable') }}"
 						data-unknown="{{ lang('mustached.checkin.geolocation.error.unknown') }}"
 						data-toofar="{{ lang('mustached.checkin.geolocation.error.tooFar') }}">
-			<p>{{ lang('mustached.checkin.geolocation.unknown') }}</p>
+			<div class="geolocation-marker"></div>
+			<p class="big">{{ lang('mustached.checkin.geolocation.unknown') }}</p>
 		</div>
 		{% endif %}
 		<div id="checkinForm"{% if geolocation %} style="display:none"{% endif %}>
