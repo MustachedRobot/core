@@ -24,8 +24,9 @@
 		{% endif %}
 		<div id="checkinForm"{% if geolocation %} style="display:none"{% endif %}>
 			{{ form }}
+			{% if current_user.group == 100 %} <div class="tip">(Basculez votre navigateur en plein écran pour activer le mode Desk)</div> {% endif %}
 		</div>
-		{% if current_user.group == 100 %} <div class="tip">(Basculez votre navigateur en plein écran pour activer le mode Desk)</div> {% endif %}
+		
 	</div>
 </div>
 

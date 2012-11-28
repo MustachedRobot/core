@@ -1,4 +1,8 @@
+
 $(document).ready(function() {
+
+	var start = $.now();
+
 
 	// Check browser compatibility
 	if(navigator.geolocation) {
@@ -14,18 +18,29 @@ $(document).ready(function() {
 	 * @param  position Position as given by the geolocation API
 	 */
 	function myPosition(position) {
-		var distance = distanceFromCoworking(latCoworking, longCoworking, position.coords.latitude, position.coords.longitude);
-		var accuracy = parseFloat($('#geolocationLoader').data('accuracy'));
+		var displayLocationMarker = 2000;
+		var end = $.now();
 
-		if(distance < accuracy)
-		{
-			$('#geolocationLoader').hide();	
-			$('#checkinForm').show();
-		}
-		else {
-			showError('toofar');
-		}
+		displayLocationMarker -= (end-start);
+
+		setTimeout(function(){
+			var distance = distanceFromCoworking(latCoworking, longCoworking, position.coords.latitude, position.coords.longitude);
+			var accuracy = parseFloat($('#geolocationLoader').data('accuracy'));
+
+			if(distance < accuracy)
+			{
+
+				$('#geolocationLoader').fadeOut(300);	
+				$('#checkinForm').delay(600).fadeIn();
+			}
+			else {
+				showError('toofar');
+			}
+		},displayLocationMarker);
+
+
 	}
+
 
 
 	/**

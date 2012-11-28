@@ -274,17 +274,51 @@ select {
 	#addForm, #editForm {
 		text-align: center;
 	}
+	.geolocation {
+		margin: auto;
+		width: 500px;
+		p {
+			text-align: left;
+		}
+	}
 }
 #loginScreen {
 	.coworkingLogo {
 		display: none;
 	}
-	.tip {
-		
+	.tip {		
 		color:@grayLight;
 		text-shadow: 2px 2px 0px #fff;
 	}
+	.checkbox {
+		input { float:none; }
+		label { display: inline; }
+	}
 }
+
+/* Checkin */
+
+.geolocation {
+	height: 140px;
+}
+
+.geolocation-marker {
+	float: left;
+	background: url(../img/geolocation.png);	
+	width: 128px;
+	height: 128px;
+	margin-left: 30px;
+	margin-right: 20px;
+}
+
+.geolocation p {
+	color: @grayLight;
+	font-size: 1.3em;
+	padding-top: 20px;
+	width: 555px;
+}
+
+
 .btn {
 	text-shadow: 1px 1px 0 rgba(0,0,0,.2);
 	padding: 15px;
@@ -483,27 +517,7 @@ select {
 	}
 }
 
-/* Checkin */
 
-.geolocation {
-	height: 140px;
-}
-
-.geolocation-marker {
-	float: left;
-	background: url(../img/geolocation.png);	
-	width: 128px;
-	height: 128px;
-	margin-left: 30px;
-	margin-right: 20px;
-}
-
-.geolocation p {
-	color: @grayLight;
-	font-size: 1.3em;
-	padding-top: 20px;
-	width: 555px;
-}
 
 
 /* Autocomplete */
