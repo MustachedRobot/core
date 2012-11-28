@@ -33,7 +33,6 @@ class Controller_Public extends \Controller_Front
 
   	$this->data['form'] = $fieldset->form()->build();
 
-
   	if (\Input::method() == 'POST')
     {
         $result = $f->create_from_form($fieldset);
@@ -42,7 +41,7 @@ class Controller_Public extends \Controller_Front
           $plugin = new Plugin();
           $plugin->pluginAction('Trigger', 'postCheckin', array('user' => $user, 'fieldset' => $fieldset));
 
-          Message::flash_success('mustached.checkin.add.success');
+          Message::flash_success('mustached.checkin.add.success');                    
           \Response::redirect('checkin/public/add');
         }
         else
@@ -61,7 +60,9 @@ class Controller_Public extends \Controller_Front
     else 
     {
       $this->data['geolocation'] = false;
-    }
+    }    
+
+    
 
 
     return $this->_render('add');
