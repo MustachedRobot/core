@@ -13,6 +13,8 @@ class Manager
 	 */
 	public function create_user($datas)
 	{
+
+		// TODO : create the company before creating the user + add relationship between user and company
 		$auth = \Auth::instance();
         $id = $auth->create_user($datas['email'], $datas['password'], $datas['email'], $group = 1);
         if($id)
