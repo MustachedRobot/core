@@ -9,4 +9,5 @@ public/assets/cache/*.css
 public/assets/cache/*.js
 fuel/app/config/development/db.php
 fuel/app/config/test/db.php
+fuel/app/config/development/migrations.php
 1/*
