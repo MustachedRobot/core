@@ -36,7 +36,7 @@ class Setup
                 'login_hash' => array('type' => 'varchar', 'constraint' => 255),
                 'profile_fields' => array('type' => 'text'),                
                 'created_at' => array('type' => 'int', 'unsigned' => true),
-                'company_id' => array('type' => 'int', 'unsigned' => true, 'constraint' => 11),
+                'company_id' => array('type' => 'int', 'unsigned' => true, 'constraint' => 11, 'null' => true),
             ), 
             array('id'),
             true,
