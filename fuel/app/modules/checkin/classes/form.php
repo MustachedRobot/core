@@ -16,11 +16,12 @@ class Form
 	{
 
 		$reasons = \Arr::assoc_to_keyval(
-  		\DB::select('id', 'name')
-			->from('reasons')
-			->order_by('order', 'asc')
-			->execute()->as_array(),
-  		'id', 'name');
+	  		\DB::select('id', 'name')
+				->from('reasons')
+				->order_by('order', 'asc')
+				->execute()->as_array(),
+	  		'id', 'name'
+  		);
 
 		$fieldset = \Fieldset::forge('checkin');
 
@@ -68,6 +69,7 @@ class Form
           	else
           	{
           		$m = new Manager;
+          		
           		return $m->add_checkin($user, Model_Reason::find($fields['reason']));
 			}
 			

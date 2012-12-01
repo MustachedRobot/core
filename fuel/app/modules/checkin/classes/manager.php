@@ -5,6 +5,7 @@ namespace Checkin;
 class Manager
 {
 
+
 	/**
 	 * Return a list the public checkins
 	 * 
@@ -96,7 +97,14 @@ class Manager
 			$checkin->count = 1;
 			$checkin->public = 1;
 			$checkin->killed = 0;
-			return ($checkin->save()) ? true : 'Error';		
+			try {
+				$checkin->save();				
+				return true;
+			}
+			catch(Exception $e)
+			{
+				return $e;
+			}
 		}
 		else
 		{
