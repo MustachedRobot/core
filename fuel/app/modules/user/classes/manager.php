@@ -14,7 +14,6 @@ class Manager
 	public function create_user($datas)
 	{
 
-		// TODO : create the company before creating the user + add relationship between user and company
 		$auth = \Auth::instance();
         $id = $auth->create_user($datas['email'], $datas['password'], $datas['email'], $group = 1);
         if($id)
@@ -35,6 +34,11 @@ class Manager
         }
 	}
 
+	/**
+	 * Update a user 
+	 * @param  array $datas 	Array of datas containing the user informations : email, password, firstname, lastname, biography, twitter, email, company
+	 * @return mixed 		    Return true on success or an error message on failure   
+	 */
 	public function update_user($id, $datas)
     {
 
@@ -49,7 +53,7 @@ class Manager
 
     	$datas['company'] =  isset($datas['company']) ? trim($datas['company'])   : null;
 
-    	if($datas['company'] != '')
+    	if(isset($datas['company']))     		
     	{
     		$c = $this->find_or_create_company($datas['company']);
     		$user->company = $c;

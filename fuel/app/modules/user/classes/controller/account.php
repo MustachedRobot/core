@@ -20,16 +20,16 @@ class Controller_Account extends \Controller_Front
   public function action_add()
   {
 
-    $fm = new Form;
-    $fieldset = $fm->create_form(null, urldecode(\Input::get('email')));
+    $um = new Manager;
+    $fm = new Form\AddForm($um, urldecode(\Input::get('email')));
+
+    $fieldset = $fm->create_form();
 
     $this->data['form'] = $fieldset->form()->build();
 
     if(\Input::method() == 'POST')
     {    
-        $um = new Manager;
-
-        $result = $fm->create_user_from_form($fieldset);
+        $result = $fm->submit($fieldset);
         
         if(is_int($result))
         {
@@ -53,23 +53,18 @@ class Controller_Account extends \Controller_Front
       $id = $this->current_user['user_id'];
     }
 
-    $fm = new Form;
-    $fieldset = $fm->create_form($id);
+    $um = new Manager;
+    $fm = new Form\UpdateForm($um, $id);
+    $fieldset = $fm->create_form();
+
+    
 
     $this->data['form'] = $fieldset->form()->build();
 
-    // If the form is submitted and the datas are valid
     if (\Input::method() == 'POST')
     {
-        $result = $fm->update_user_from_form($id, $fieldset);
-        if ($result === true)
-        {
-           $this->data['msg'] = Message::success('mustached.user.update_success');
-        }
-        else
-        {
-           $this->data['msg'] = Message::error($result);
-        }
+        $result = $fm->submit($fieldset);
+        $this->data['msg'] = ($result === true) ? Message::success('mustached.user.update_success') : Message::error($result);
     }
 
     return $this->_render('edit');
@@ -79,34 +74,18 @@ class Controller_Account extends \Controller_Front
   public function action_edit_password()
   {
 
-    $fieldset = \Fieldset::forge('edit_password');
+    $um = new Manager;
+    $fm = new Form\PasswordForm($um, $this->current_user['email']);
 
-    $form = $fieldset->form();
-    $form->add('current_password', \Lang::get('mustached.user.edit_password.current_password'), array('type' => 'password'), array(array('required')));
-    $form->add('password', \Lang::get('mustached.user.edit_password.new_password'), array('type' => 'password'), array(array('required')));
-    $form->add('submit', '', array('type' => 'submit', 'value' => \Lang::get('mustached.user.edit_password.action_label'), 'class' => 'btn medium primary'));
-
-    // set the appropriate data for the template
-    $this->data['form'] = $form->build();
+    $fieldset = $fm->create_form();
+    $this->data['form'] = $fieldset->form()->build();
 
     if (\Input::method() == 'POST')
     {
-      if ($fieldset->validation()->run() == true)
-      {
-        $fields = $fieldset->validated();
-        $auth = \Auth::instance();
-
-        $result = $auth->change_password($fields['current_password'], $fields['password'], $this->current_user['email']);
-        if ($result === true)
-        {
-          $this->data['msg'] = Message::success('mustached.user.edit_password.success');
-        }
-        else
-        {
-          $this->data['msg'] = Message::error('mustached.user.edit_password.error');
-        }
-      }
+      $result = $fm->submit($fieldset);
+      $this->data['msg'] = ($result === true) ? Message::success('mustached.user.edit_password.success') : Message::error('mustached.user.edit_password.error');
     }
+
     return $this->_render('edit_password');
   }
 
