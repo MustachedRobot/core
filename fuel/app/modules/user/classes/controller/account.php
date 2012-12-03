@@ -57,8 +57,6 @@ class Controller_Account extends \Controller_Front
     $fm = new Form\UpdateForm($um, $id);
     $fieldset = $fm->create_form();
 
-    
-
     $this->data['form'] = $fieldset->form()->build();
 
     if (\Input::method() == 'POST')
