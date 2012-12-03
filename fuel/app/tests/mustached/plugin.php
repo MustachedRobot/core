@@ -25,15 +25,13 @@ class Test_Plugin extends TestCase
 
 	public function test_get_plugins()
 	{
-		$p = new Plugin;
-		$expected_plugins = array('twitter');
-		$result_plugins    = $p->get_plugins();
+		$expected_plugins = array('test');
+		$result_plugins    = $this->p->get_plugins();
 		$this->assertEquals($expected_plugins, $result_plugins);
 	}
 
 	public function test_post_checkin_triggers_the_plugins()
 	{
-		// use the fake test plugin
 		$res = $this->p->pluginAction('Trigger', 'postCheckin');
 		$this->assertEquals(true, $res['test']);
 	}
@@ -67,7 +65,7 @@ class Test_Plugin extends TestCase
 	/**
 	 * Test on each real plugin if the addElementOnPublicCheckin is correctly configured
 	 */
-	public function test_add_element_on_public_checkin_has_right_values_and_types()
+	public function test_add_element_on_public_checkin_return_right_values_and_types()
 	{		
 		foreach($this->real_plugins as $p)
 		{

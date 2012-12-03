@@ -7,6 +7,9 @@ class_alias('Fuel\\Core\\Autoloader', 'Autoloader');
 // Bootstrap the framework DO NOT edit this
 require COREPATH.'bootstrap.php';
 
+// Load the composer autoloader
+require 'vendor/autoload.php';
+
 
 Autoloader::add_classes(array(
 	// Add classes you want to override here

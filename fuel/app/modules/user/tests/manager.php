@@ -80,6 +80,8 @@ class Test_Manager extends \TestCase
 		$this->assertInternalType('int', $return);
 	}
 
+
+
 	/*----------------------------------------------
      *
      * TEST UPDATE USER
