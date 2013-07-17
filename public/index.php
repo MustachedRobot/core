@@ -1,9 +1,19 @@
 <?php
 /**
- * Set error reporting and display errors settings.  You will want to change these when in production.
+ * Fuel is a fast, lightweight, community driven PHP5 framework.
+ *
+ * @package    Fuel
+ * @version    1.6
+ * @author     Fuel Development Team
+ * @license    MIT License
+ * @copyright  2010 - 2013 Fuel Development Team
+ * @link       http://fuelphp.com
  */
 
-error_reporting(1);
+/**
+ * Set error reporting and display errors settings.  You will want to change these when in production.
+ */
+error_reporting(-1);
 ini_set('display_errors', 1);
 
 /**
@@ -41,9 +51,19 @@ try
 catch (HttpNotFoundException $e)
 {
 	$route = array_key_exists('_404_', Router::$routes) ? Router::$routes['_404_']->translation : Config::get('routes._404_');
-	if ($route)
+
+	if($route instanceof Closure)
 	{
-		$response = Request::forge($route)->execute()->response();
+		$response = $route();
+
+		if( ! $response instanceof Response)
+		{
+			$response = Response::forge($response);
+		}
+	}
+	elseif ($route)
+	{
+		$response = Request::forge($route, false)->execute()->response();
 	}
 	else
 	{

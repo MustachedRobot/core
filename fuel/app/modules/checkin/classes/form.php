@@ -60,7 +60,7 @@ class Form
 		if ($fieldset->validation()->run() == true)
         {
 			$fields = $fieldset->validated();
-			$user = \User\Model_User::find()->where('email', '=', $fields['email'])->get_one();
+			$user = \User\Model_User::query()->where('email', '=', $fields['email'])->get_one();
 			if (!$user)
           	{
         		Message::flash_error('mustached.checkin.add.accountDoesntExistCreate');

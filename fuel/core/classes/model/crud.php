@@ -3,10 +3,10 @@
  * Part of the Fuel framework.
  *
  * @package    Fuel
- * @version    1.0
+ * @version    1.6
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2012 Fuel Development Team
+ * @copyright  2010 - 2013 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -31,6 +31,11 @@ class Model_Crud extends \Model implements \Iterator, \ArrayAccess, \Serializabl
 	// protected static $_connection = null;
 
 	/**
+	 * @var string   $_write_connection   The database connection to use for writes
+	 */
+	// protected static $_write_connection = null;
+
+	/**
 	 * @var  array  $_rules  The validation rules (must set this in your Model to use)
 	 */
 	// protected static $_rules = array();
@@ -39,6 +44,16 @@ class Model_Crud extends \Model implements \Iterator, \ArrayAccess, \Serializabl
 	 * @var  array  $_properties  The table column names (must set this in your Model to use)
 	 */
 	// protected static $_properties = array();
+
+	/**
+	 * @var  array  $_mass_whitelist  The table column names which will be set while using mass assignment like ->set($data)
+	 */
+	// protected static $_mass_whitelist = array();
+
+	/**
+	 * @var  array  $_mass_blacklist  The table column names which will not be set while using mass assignment like ->set($data)
+	 */
+	// protected static $_mass_blacklist = array();
 
 	/**
 	 * @var array  $_labels  Field labels (must set this in your Model to use)
@@ -224,7 +239,7 @@ class Model_Crud extends \Model implements \Iterator, \ArrayAccess, \Serializabl
 
 		static::pre_find($query);
 
-		$result =  $query->execute(isset(static::$_connection) ? static::$_connection : null);
+		$result =  $query->execute(static::get_connection());
 		$result = ($result->count() === 0) ? null : $result->as_array($key);
 
 		return static::post_find($result);
@@ -244,7 +259,7 @@ class Model_Crud extends \Model implements \Iterator, \ArrayAccess, \Serializabl
 		$select = $column ?: static::primary_key();
 
 		// Get the database group / connection
-		$connection = isset(static::$_connection) ? static::$_connection : null;
+		$connection = static::get_connection();
 
 		// Get the columns
 		$columns = \DB::expr('COUNT('.($distinct ? 'DISTINCT ' : '').
@@ -309,6 +324,22 @@ class Model_Crud extends \Model implements \Iterator, \ArrayAccess, \Serializabl
 			return static::find_one_by(substr($name, 12), reset($args));
 		}
 		throw new \BadMethodCallException('Method "'.$name.'" does not exist.');
+	}
+
+	/**
+	 * Get the connection to use for reading or writing
+	 *
+	 * @param  boolean  $writeable Get a writeable connection
+	 * @return Database_Connection
+	 */
+	protected static function get_connection($writeable = false)
+	{
+		if ($writeable and isset(static::$_write_connection))
+		{
+			return static::$_write_connection;
+		}
+
+		return isset(static::$_connection) ? static::$_connection : null;
 	}
 
 	/**
@@ -400,7 +431,19 @@ class Model_Crud extends \Model implements \Iterator, \ArrayAccess, \Serializabl
 	{
 		foreach ($data as $key => $value)
 		{
-			$this->{$key} = $value;
+			if (isset(static::$_mass_whitelist))
+			{
+				in_array($key, static::$_mass_whitelist) and $this->{$key} = $value;
+			}
+			elseif (isset(static::$_mass_blacklist))
+			{
+				( ! in_array($key, static::$_mass_blacklist)) and $this->{$key} = $value;
+			}
+			else
+			{
+				// no static::$_mass_whitelist or static::$_mass_blacklist set, proceed with default behavior
+				$this->{$key} = $value;
+			}
 		}
 		return $this;
 	}
@@ -480,7 +523,7 @@ class Model_Crud extends \Model implements \Iterator, \ArrayAccess, \Serializabl
 			            ->set($vars);
 
 			$this->pre_save($query);
-			$result = $query->execute(isset(static::$_connection) ? static::$_connection : null);
+			$result = $query->execute(static::get_connection(true));
 
 			if ($result[1] > 0)
 			{
@@ -502,7 +545,7 @@ class Model_Crud extends \Model implements \Iterator, \ArrayAccess, \Serializabl
 		         ->where(static::primary_key(), '=', $this->{static::primary_key()});
 
 		$this->pre_update($query);
-		$result = $query->execute(isset(static::$_connection) ? static::$_connection : null);
+		$result = $query->execute(static::get_connection(true));
 		$result > 0 and $this->set($vars);
 
 		return $this->post_update($result);
@@ -520,7 +563,7 @@ class Model_Crud extends \Model implements \Iterator, \ArrayAccess, \Serializabl
 		            ->where(static::primary_key(), '=', $this->{static::primary_key()});
 
 		$this->pre_delete($query);
-		$result = $query->execute(isset(static::$_connection) ? static::$_connection : null);
+		$result = $query->execute(static::get_connection(true));
 
 		return $this->post_delete($result);
 	}

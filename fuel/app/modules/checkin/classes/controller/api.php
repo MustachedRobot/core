@@ -56,7 +56,7 @@ class Controller_Api extends \Controller_Api
 
 		
 		//$user = \User\Model_User::find($c['user']);
-		$user = \User\Model_User::find()->where('email', '=', $c['email'])->get_one();
+		$user = \User\Model_User::query()->where('email', '=', $c['email'])->get_one();
 		$reason = Model_Reason::find($c['reason']);
 		$return = $this->m->add_checkin($user, $reason);
 

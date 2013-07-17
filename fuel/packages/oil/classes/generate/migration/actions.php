@@ -1,12 +1,14 @@
 <?php
 /**
+ * Fuel
+ *
  * Fuel is a fast, lightweight, community driven PHP5 framework.
  *
  * @package    Fuel
- * @version    1.0
+ * @version    1.6
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2011 Fuel Development Team
+ * @copyright  2010 - 2013 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -67,7 +69,7 @@ class Generate_Migration_Actions
 		}
 
 		// ID Field
-		$have_id or $field_str = "\t\t\t'id' => array('constraint' => 11, 'type' => 'int', 'auto_increment' => true),".PHP_EOL . $field_str;
+		$have_id or $field_str = "\t\t\t'id' => array('constraint' => 11, 'type' => 'int', 'auto_increment' => true, 'unsigned' => true),".PHP_EOL . $field_str;
 
 		$up = <<<UP
 		\DBUtil::create_table('{$subjects[1]}', array(

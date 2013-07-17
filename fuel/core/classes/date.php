@@ -3,10 +3,10 @@
  * Part of the Fuel framework.
  *
  * @package    Fuel
- * @version    1.0
+ * @version    1.6
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2012 Fuel Development Team
+ * @copyright  2010 - 2013 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -286,7 +286,7 @@ class Date
 
 	public function __construct($timestamp = null, $timezone = null)
 	{
-		! $timestamp and $timestamp = time() + static::$server_gmt_offset;
+		is_null( $timestamp ) and $timestamp = time() + static::$server_gmt_offset;
 		! $timezone and $timezone   = \Fuel::$timezone;
 
 		$this->timestamp = $timestamp;
