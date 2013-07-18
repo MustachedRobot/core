@@ -20,13 +20,23 @@
         "monolog/monolog": "1.5.*",
     	"fuelphp/upload": "2.0",
         "twig/twig": "1.*",
-        "atlantic2/checkin": "dev-master"
+        "mustached-robot/checkin": "dev-master",
+        "mustached-robot/user": "dev-master",
+        "mustached-robot/calendar": "dev-master"
     },
     "repositories": [
         {
             "type": "vcs",
-            "url":  "git@bitbucket.org:atlantic2/checkin.git"
-        }
+            "url":  "git@github.com:MustachedRobot/calendar.git"
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:MustachedRobot/checkin.git"
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:MustachedRobot/user.git"
+        },
     ],
     "suggest": {
         "mustache/mustache": "Allow Mustache templating with the Parser package",
