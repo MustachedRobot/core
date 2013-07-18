@@ -4,7 +4,7 @@
 
 ## Description
 
-Mustached Robot is an open source checkin plateform for coworking spaces. The project started in [Nantes]((http://goo.gl/maps/BNA73) and is currently under development.
+Mustached Robot is an open source checkin plateform for coworking spaces. The project started in [Nantes]((http://goo.gl/maps/BNA73).
 
 ## Development team
 
@@ -15,20 +15,20 @@ New developers or designers are welcome to join the project. Just contact us on 
 
 ## Roadmap
 
-### Beta version (september)
+### Beta version
 
 _The beta version is a completely functional application on its own but a little nerdy to install_
 
 * Coworkers can create an account and checkin in the coworking space
 * Coworking space managers can access the coworking space datas on a beautiful dashboards: coworkers currently here, coworkers profiles, coworking space statistics
-* A Dashboard view with the coworkers profiles and the next events in the coworking space (this view can be used on a large TV screen in the coworking space)
 * An API is available so any allowed developer can play with the coworking space datas
-* Mobile ready
 
 ### V1
 
 _The V1 is an easy-to-install, easy-to-extend plateform_
 
+* A Dashboard view with the coworkers profiles and the next events in the coworking space (this view can be used on a large TV screen in the coworking space)
+* Mobile ready
 * Install wizard (database configuration, google calendar credentials, creation of the first admin user)
 * Plugin system to allow anyone to develop plugins without needing to change the core files (example: a billing management system through Freshbook, a connection to a specific CRM, etc).
 

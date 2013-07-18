@@ -36,6 +36,7 @@ class Controller_Api extends \Controller_Api
 		{
 			//$this->response($this->um->get_user($id));
 			$this->response($this->filter_array($this->um->get_user($id), $this->return));
+			//$this->response($this->filter_array($this->um->get_user_expand($id, array('company')), $this->return));	
 		}
 	}
 
@@ -66,10 +67,12 @@ class Controller_Api extends \Controller_Api
 
 	public function get_here($reason = null)
 	{
-		$u = $this->um->get_users_here($reason);
+		$u = $this->um->get_users_here($reason);			
+		
 		if($u)
 		{
-			$this->response($this->filter_array($u, array_push($this->return, 'since')));
+			array_push($this->return, 'since');
+			$this->response($this->filter_array($u, $this->return));
 		}
 		else
 		{
@@ -89,6 +92,30 @@ class Controller_Api extends \Controller_Api
 		);
 		$this->response($response);
 
+	}
+
+	public function post_login()
+	{
+
+		$u = \Input::post();
+		
+		
+		$user = $u['login'];
+		$password = $u['password'];
+		
+		$auth = \Auth::instance();
+
+		$res = $auth->validate_user($user, $password);
+
+		if(!$res){
+			$response = 0;
+		}
+		else {
+			$response = 1;
+		}		
+		$this->response(array('logged' => $response));
+
+		
 	}
 
 

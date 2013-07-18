@@ -74,6 +74,7 @@ return array(
 		'extensions' => array(
 			'Twig_Fuel_Extension',
 			'Casset_Addons_Twig',
+			'Mustached\\TwigExtensions'
 		),
 	),
 

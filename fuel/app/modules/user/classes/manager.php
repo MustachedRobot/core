@@ -13,6 +13,7 @@ class Manager
 	 */
 	public function create_user($datas)
 	{
+
 		$auth = \Auth::instance();
         $id = $auth->create_user($datas['email'], $datas['password'], $datas['email'], $group = 1);
         if($id)
@@ -33,6 +34,11 @@ class Manager
         }
 	}
 
+	/**
+	 * Update a user 
+	 * @param  array $datas 	Array of datas containing the user informations : email, password, firstname, lastname, biography, twitter, email, company
+	 * @return mixed 		    Return true on success or an error message on failure   
+	 */
 	public function update_user($id, $datas)
     {
 
@@ -47,7 +53,7 @@ class Manager
 
     	$datas['company'] =  isset($datas['company']) ? trim($datas['company'])   : null;
 
-    	if($datas['company'] != '')
+    	if(isset($datas['company']))     		
     	{
     		$c = $this->find_or_create_company($datas['company']);
     		$user->company = $c;
@@ -126,7 +132,7 @@ class Manager
 						->from('companies')			
 						->where('companies.id', '=', $u['company_id'])
 						->execute()
-						->as_array();
+						->current();
 
 					$u['company'] = $c;
 				break;
@@ -195,7 +201,8 @@ class Manager
     {
     	try 
     	{
-			$u = Model_User::find()->where('email', '=', $email)->get_one();
+			//$u = Model_User::find('all')->where('email', '=', $email)->get_one();
+            $u = Model_User::query()->where('email', '=', $email)->get_one();
 
 			$user = array(
 	            'user_id'      => $u->id,
@@ -261,7 +268,7 @@ class Manager
     {
         if ($company_name != '')
         {
-            $c = Model_Company::find()->where('name', '=', $company_name)->get_one();
+            $c = Model_Company::query()->where('name', '=', $company_name)->get_one();
 
             if(!$c)
             {
