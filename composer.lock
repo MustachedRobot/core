@@ -3,28 +3,8 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "5df3a1458d26419a2ad325d37f7b5ff6",
+    "hash": "5ce5d2757486d4cb5236df3ff6bd04a7",
     "packages": [
-        {
-            "name": "atlantic2/checkin",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@bitbucket.org:atlantic2/checkin.git",
-                "reference": "a8d7314e46a363e07abafdedeab7e228b2e9b74e"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "fuel-module",
-            "authors": [
-                {
-                    "name": "Jérémie Pottier",
-                    "email": "jeremie.pottier@gmail.com"
-                }
-            ],
-            "time": "2013-07-18 11:23:34"
-        },
         {
             "name": "composer/installers",
             "version": "dev-master",
@@ -204,6 +184,96 @@
             "time": "2013-04-23 10:09:48"
         },
         {
+            "name": "mustached-robot/calendar",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MustachedRobot/calendar.git",
+                "reference": "3f7bc990ac32bde5405ab8e1845f02b5d0f963bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MustachedRobot/calendar/zipball/3f7bc990ac32bde5405ab8e1845f02b5d0f963bc",
+                "reference": "3f7bc990ac32bde5405ab8e1845f02b5d0f963bc",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "fuel-module",
+            "authors": [
+                {
+                    "name": "Jérémie Pottier",
+                    "email": "jeremie.pottier@gmail.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/MustachedRobot/calendar/tree/master",
+                "issues": "https://github.com/MustachedRobot/calendar/issues"
+            },
+            "time": "2013-07-18 16:52:43"
+        },
+        {
+            "name": "mustached-robot/checkin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MustachedRobot/checkin.git",
+                "reference": "0b18f52d20d367c57ebad1aafa86f4167c7f3fe3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MustachedRobot/checkin/zipball/0b18f52d20d367c57ebad1aafa86f4167c7f3fe3",
+                "reference": "0b18f52d20d367c57ebad1aafa86f4167c7f3fe3",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "fuel-module",
+            "authors": [
+                {
+                    "name": "Jérémie Pottier",
+                    "email": "jeremie.pottier@gmail.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/MustachedRobot/checkin/tree/master",
+                "issues": "https://github.com/MustachedRobot/checkin/issues"
+            },
+            "time": "2013-07-18 16:52:05"
+        },
+        {
+            "name": "mustached-robot/user",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MustachedRobot/user.git",
+                "reference": "57da0030d9978b92cef33ab57dfff9c55fb4d8d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MustachedRobot/user/zipball/57da0030d9978b92cef33ab57dfff9c55fb4d8d6",
+                "reference": "57da0030d9978b92cef33ab57dfff9c55fb4d8d6",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "fuel-module",
+            "authors": [
+                {
+                    "name": "Jérémie Pottier",
+                    "email": "jeremie.pottier@gmail.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/MustachedRobot/user/tree/master",
+                "issues": "https://github.com/MustachedRobot/user/issues"
+            },
+            "time": "2013-07-18 16:52:25"
+        },
+        {
             "name": "psr/log",
             "version": "1.0.0",
             "source": {
@@ -299,7 +369,9 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "atlantic2/checkin": 20
+        "mustached-robot/checkin": 20,
+        "mustached-robot/user": 20,
+        "mustached-robot/calendar": 20
     },
     "platform": {
         "php": ">=5.3.3"

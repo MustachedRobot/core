@@ -36,7 +36,7 @@
         {
             "type": "vcs",
             "url":  "git@github.com:MustachedRobot/user.git"
-        },
+        }
     ],
     "suggest": {
         "mustache/mustache": "Allow Mustache templating with the Parser package",
