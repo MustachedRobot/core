@@ -20,12 +20,12 @@
         "monolog/monolog": "1.5.*",
     	"fuelphp/upload": "2.0",
         "twig/twig": "1.*",
-        "atlantic2/mustached-checkin": "dev-master"
+        "atlantic2/checkin": "dev-master"
     },
     "repositories": [
         {
             "type": "vcs",
-            "url":  "git@bitbucket.org:atlantic2/mustached-checkin.git"
+            "url":  "git@bitbucket.org:atlantic2/checkin.git"
         }
     ],
     "suggest": {
