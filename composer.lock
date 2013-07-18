@@ -3,8 +3,100 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "c46e54ff4c3340ed7623c284fe30cfaa",
+    "hash": "916ac07fc6fa8a1a283f348a345e0332",
     "packages": [
+        {
+            "name": "atlantic2/mustached-checkin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:atlantic2/mustached-checkin.git",
+                "reference": "b88260990d13ce29ee113e06deaee81499d404b1"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "fuel-module",
+            "authors": [
+                {
+                    "name": "Jérémie Pottier",
+                    "email": "jeremie.pottier@gmail.com"
+                }
+            ],
+            "time": "2013-07-18 11:09:50"
+        },
+        {
+            "name": "composer/installers",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "34bd8e879adc82fac26eb2c7551a03e04f9b7e3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/34bd8e879adc82fac26eb2c7551a03e04f9b7e3a",
+                "reference": "34bd8e879adc82fac26eb2c7551a03e04f9b7e3a",
+                "shasum": ""
+            },
+            "replace": {
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "composer-installer",
+            "extra": {
+                "class": "Composer\\Installers\\Installer",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Composer\\Installers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "http://dontkry.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "http://composer.github.com/installers/",
+            "keywords": [
+                "TYPO3 Flow",
+                "TYPO3 Neos",
+                "agl",
+                "cakephp",
+                "codeigniter",
+                "drupal",
+                "fuelphp",
+                "installer",
+                "joomla",
+                "kohana",
+                "laravel",
+                "li3",
+                "lithium",
+                "mako",
+                "modulework",
+                "phpbb",
+                "ppi",
+                "silverstripe",
+                "symfony",
+                "wordpress",
+                "zend"
+            ],
+            "time": "2013-06-29 16:45:39"
+        },
         {
             "name": "fuelphp/upload",
             "version": "2.0",
@@ -51,26 +143,26 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "dev-master",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "050bb52fd803e4184f43629cc61df1057cea74c4"
+                "reference": "1.5.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/050bb52fd803e4184f43629cc61df1057cea74c4",
-                "reference": "050bb52fd803e4184f43629cc61df1057cea74c4",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1.5.0",
+                "reference": "1.5.0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
-                "psr/log": "~1.0"
+                "psr/log": ">=1.0,<2.0"
             },
             "require-dev": {
                 "doctrine/couchdb": "dev-master",
                 "mlehner/gelf-php": "1.0.*",
-                "raven/raven": "0.5.*"
+                "raven/raven": "0.3.*"
             },
             "suggest": {
                 "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
@@ -82,7 +174,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
@@ -109,7 +201,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2013-07-17 16:11:27"
+            "time": "2013-04-23 10:09:48"
         },
         {
             "name": "psr/log",
@@ -206,9 +298,9 @@
 
     ],
     "minimum-stability": "dev",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "atlantic2/mustached-checkin": 20
+    },
     "platform": {
         "php": ">=5.3.3"
     },
