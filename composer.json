@@ -19,8 +19,15 @@
         "php": ">=5.3.3",
         "monolog/monolog": "1.5.*",
     	"fuelphp/upload": "2.0",
-        "twig/twig": "1.*"
+        "twig/twig": "1.*",
+        "atlantic2/mustached-checkin": "1.0",
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@bitbucket.org:atlantic2/mustached-checkin.git"
+        }
+    ],
     "suggest": {
         "mustache/mustache": "Allow Mustache templating with the Parser package",
         "smarty/smarty": "Allow Smarty templating with the Parser package",
