@@ -12,6 +12,8 @@ class Controller_Account extends \Controller_Front
   }
 
 
+
+
   /**
    * Page allowing a user to create his account
    * If the user comes from the checkin page and his account doesn't exists: the email field is populated

@@ -201,7 +201,8 @@ class Manager
     {
     	try 
     	{
-			$u = Model_User::find()->where('email', '=', $email)->get_one();
+			//$u = Model_User::find('all')->where('email', '=', $email)->get_one();
+            $u = Model_User::query()->where('email', '=', $email)->get_one();
 
 			$user = array(
 	            'user_id'      => $u->id,
@@ -267,7 +268,7 @@ class Manager
     {
         if ($company_name != '')
         {
-            $c = Model_Company::find()->where('name', '=', $company_name)->get_one();
+            $c = Model_Company::query()->where('name', '=', $company_name)->get_one();
 
             if(!$c)
             {

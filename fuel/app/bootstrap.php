@@ -8,7 +8,7 @@ class_alias('Fuel\\Core\\Autoloader', 'Autoloader');
 require COREPATH.'bootstrap.php';
 
 // Load the composer autoloader
-require 'vendor/autoload.php';
+#require 'vendor/autoload.php';
 
 
 Autoloader::add_classes(array(
