@@ -3,15 +3,15 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "916ac07fc6fa8a1a283f348a345e0332",
+    "hash": "5df3a1458d26419a2ad325d37f7b5ff6",
     "packages": [
         {
-            "name": "atlantic2/mustached-checkin",
+            "name": "atlantic2/checkin",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@bitbucket.org:atlantic2/mustached-checkin.git",
-                "reference": "b88260990d13ce29ee113e06deaee81499d404b1"
+                "url": "git@bitbucket.org:atlantic2/checkin.git",
+                "reference": "a8d7314e46a363e07abafdedeab7e228b2e9b74e"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -23,7 +23,7 @@
                     "email": "jeremie.pottier@gmail.com"
                 }
             ],
-            "time": "2013-07-18 11:09:50"
+            "time": "2013-07-18 11:23:34"
         },
         {
             "name": "composer/installers",
@@ -299,7 +299,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "atlantic2/mustached-checkin": 20
+        "atlantic2/checkin": 20
     },
     "platform": {
         "php": ">=5.3.3"

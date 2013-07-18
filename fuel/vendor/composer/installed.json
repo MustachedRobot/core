@@ -275,18 +275,18 @@
         ]
     },
     {
-        "name": "atlantic2/mustached-checkin",
+        "name": "atlantic2/checkin",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "git@bitbucket.org:atlantic2/mustached-checkin.git",
-            "reference": "b88260990d13ce29ee113e06deaee81499d404b1"
+            "url": "git@bitbucket.org:atlantic2/checkin.git",
+            "reference": "a8d7314e46a363e07abafdedeab7e228b2e9b74e"
         },
         "require": {
             "composer/installers": "~1.0"
         },
-        "time": "2013-07-18 11:09:50",
+        "time": "2013-07-18 11:23:34",
         "type": "fuel-module",
         "installation-source": "source",
         "authors": [
