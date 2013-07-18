@@ -20,7 +20,7 @@
         "monolog/monolog": "1.5.*",
     	"fuelphp/upload": "2.0",
         "twig/twig": "1.*",
-        "atlantic2/mustached-checkin"
+        "atlantic2/mustached-checkin": "dev-master"
     },
     "repositories": [
         {
