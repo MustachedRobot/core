@@ -34,7 +34,7 @@ _The V1 is an easy-to-install, easy-to-extend plateform_
 
 ## Installation
 
-See the [install documentation](https://github.com/cantineNantes/mustached-robot/wiki/Installation)
+	See the [install documentation](https://github.com/MustachedRobot/core/wiki/Installation)
 
 ## Documentation 
 
