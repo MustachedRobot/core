@@ -13,10 +13,10 @@ fuel/app/vendor
 
 fuel/app/config/development/migrations.php
 fuel/app/config/test/db.php
-fuel/app/production/config.php
-fuel/app/production/rest.php
-fuel/app/production/auth.php
-fuel/app/production/mustached.php
+fuel/app/config/production/config.php
+fuel/app/config/production/rest.php
+fuel/app/config/production/auth.php
+fuel/app/config/production/mustached.php
 
 fuel/vendor/*
 fuel/vendor/!.gitkeep
