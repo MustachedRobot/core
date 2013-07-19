@@ -16,7 +16,7 @@ fuel/app/config/test/db.php
 fuel/app/config/production/config.php
 fuel/app/config/production/rest.php
 fuel/app/config/production/auth.php
-fuel/app/config/production/mustached.php
+fuel/app/config/mustached.php
 
 fuel/vendor/*
 fuel/vendor/!.gitkeep
