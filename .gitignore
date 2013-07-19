@@ -7,11 +7,16 @@ fuel/app/logs/*
 fuel/app/logs/!.gitkeep
 public/assets/cache/*.css
 public/assets/cache/*.js
-fuel/app/config/development/db.php
-fuel/app/config/test/db.php
-fuel/app/config/development/migrations.php
+
 fuel/app/vendor
 1/*
+
+fuel/app/config/development/migrations.php
+fuel/app/config/test/db.php
+fuel/app/production/config.php
+fuel/app/production/rest.php
+fuel/app/production/auth.php
+fuel/app/production/mustached.php
 
 fuel/vendor/*
 fuel/vendor/!.gitkeep
@@ -21,5 +26,3 @@ fuel/app/modules/!install/*
 fuel/app/modules/!test/*
 fuel/app/modules/!twitter/*
 
-fuel/app/production/config.php
-fuel/app/production/rest.php
