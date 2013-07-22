@@ -1,6 +1,4 @@
-.DS_Store
-*.sublime-project
-*.sublime-workspace
+
 fuel/app/cache/twig/*
 fuel/app/cache/twig/!.gitkeep
 fuel/app/logs/*
@@ -8,15 +6,16 @@ fuel/app/logs/!.gitkeep
 public/assets/cache/*.css
 public/assets/cache/*.js
 
-fuel/app/vendor
+fuel/app/vendor/*
+fuel/app/vendor/!.gitkeep
 1/*
 
 fuel/app/config/development/migrations.php
 fuel/app/config/test/db.php
-fuel/app/config/production/config.php
-fuel/app/config/production/rest.php
-fuel/app/config/production/auth.php
 fuel/app/config/mustached.php
+fuel/app/config/simpleauth.php
+fuel/app/config/production/db.php
+fuel/app/config/production/rest.php
 
 fuel/vendor/*
 fuel/vendor/!.gitkeep
