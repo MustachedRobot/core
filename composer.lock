@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "5ce5d2757486d4cb5236df3ff6bd04a7",
+    "hash": "4e0988aa5399592f9458c0b102f599db",
     "packages": [
         {
             "name": "composer/installers",
@@ -244,6 +244,33 @@
             "time": "2013-07-18 16:52:05"
         },
         {
+            "name": "mustached-robot/twitter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MustachedRobot/twitter.git",
+                "reference": "ca0160786fc4e0bf8aebf713b38cbf970d6fa947"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MustachedRobot/twitter/zipball/ca0160786fc4e0bf8aebf713b38cbf970d6fa947",
+                "reference": "ca0160786fc4e0bf8aebf713b38cbf970d6fa947",
+                "shasum": ""
+            },
+            "type": "library",
+            "authors": [
+                {
+                    "name": "Jérémie Pottier",
+                    "email": "jeremie.pottier@gmail.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/MustachedRobot/twitter/tree/master",
+                "issues": "https://github.com/MustachedRobot/twitter/issues"
+            },
+            "time": "2013-07-22 22:20:13"
+        },
+        {
             "name": "mustached-robot/user",
             "version": "dev-master",
             "source": {
@@ -371,7 +398,8 @@
     "stability-flags": {
         "mustached-robot/checkin": 20,
         "mustached-robot/user": 20,
-        "mustached-robot/calendar": 20
+        "mustached-robot/calendar": 20,
+        "mustached-robot/twitter": 20
     },
     "platform": {
         "php": ">=5.3.3"

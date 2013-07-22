@@ -22,7 +22,8 @@
         "twig/twig": "1.*",
         "mustached-robot/checkin": "dev-master",
         "mustached-robot/user": "dev-master",
-        "mustached-robot/calendar": "dev-master"
+        "mustached-robot/calendar": "dev-master",
+        "mustached-robot/twitter": "dev-master"
     },
     "repositories": [
         {
@@ -36,6 +37,10 @@
         {
             "type": "vcs",
             "url":  "git@github.com:MustachedRobot/user.git"
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:MustachedRobot/twitter.git"
         }
     ],
     "suggest": {
