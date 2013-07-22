@@ -1,5 +1,6 @@
 
 
+fuel/app/cache/twig/*
 fuel/app/cache/twig/!.gitkeep
 fuel/app/logs/*
 fuel/app/logs/!.gitkeep
