@@ -18,12 +18,10 @@ class Plugin {
         $modules = array_keys(\File::read_dir($plugin_path, 1));
         $plugins = array();
 
-        foreach($modules as $module)
-        {
+        foreach ($modules as $module) {
             $module = substr($module, 0, -1);
         
-            if(!in_array($module, $this->regular_modules))
-            {
+            if (!in_array($module, $this->regular_modules)) {
                 $this->plugins[] = $module;
             }
         }
@@ -38,24 +36,18 @@ class Plugin {
      * @param  Array  $params Array of params
      * @return Array          Array of the return values of each plugin
      */
-    public function pluginAction($class, $method, $params = null)
-    {
+    public function pluginAction($class, $method, $params = null) {
         $return = array();
-        foreach($this->plugins as $plugin)
-        {
+        foreach($this->plugins as $plugin) {
             \Module::load($plugin);
             $object_name = "\\".ucfirst($plugin)."\\".ucfirst($class);
 
             $object = new $object_name;
             
-            if(method_exists($object, $method))
-            {
-                try 
-                {
+            if(method_exists($object, $method)) {
+                try  {
                     $return[$plugin] = $object->$method($params);                       
-                }
-                catch(Exception $e)
-                {
+                } catch(Exception $e) {
                     $return[$plugin] = array('error' => $e->getMessage());
                     // Log the error and the plugin associated with it
                 }
@@ -70,14 +62,14 @@ class Plugin {
      * This method checks the Form class of each plugins and checks if there is a method called "addElementOn".FormName
      * If the method exists, it is called and the form element is added on the given form.
      * 
-     * @param  String $form_name Name of the form
-     * @param  \Fieldset        Fieldset on which to add the new form element
+     * @param String    $form_name Name of the form
+     * @param \Fieldset $fieldset  Fieldset on which to add the new form element
+     * 
      * @return \Fieldset        Fieldset
      */
     public function addToForm($form_name, $fieldset)
     {       
-        foreach($this->plugins as $plugin)
-        {
+        foreach ($this->plugins as $plugin) {
             \Module::load($plugin);
             $object_name = "\\".ucfirst($plugin)."\Form";
 
@@ -85,16 +77,12 @@ class Plugin {
             $object = new $object_name;
             $method = 'addElementOn'.$form_name;
 
-            if(method_exists($object, $method))
-            {
-                try 
-                {
+            if (method_exists($object, $method)) {
+                try  {
                     $p = $object->$method();
                     $method_add = 'add_'.$p['before_after'];
                     $fieldset->$method_add($p['name'], $p['label'], $p['attributes'], $p['rules'], $p['fieldname']);                    
-                }
-                catch(Exception $e)
-                {
+                } catch(Exception $e) {
                     // Log the error and the plugin associated with it
                 }
             }               
@@ -133,7 +121,7 @@ class Plugin {
 
 
     /**
-     * Save the settings of a plugin in the plugin config file.
+     * Save the settings of a plugin in the app config file.
      * 
      * @param String    $plugin   Plugin name
      * @param \Fieldset $fieldset Fieldset
@@ -208,9 +196,6 @@ class Plugin {
     public function getConfig($plugin)
     {
         return \Config::get('mustached.'.$plugin);
-        
-
-        return $localConfig;
     }
 
     /**
