@@ -15,6 +15,7 @@ fuel/app/config/development/migrations.php
 fuel/app/config/test/db.php
 fuel/app/config/mustached.php
 fuel/app/config/simpleauth.php
+fuel/app/config/auth.php
 fuel/app/config/production/db.php
 fuel/app/config/production/rest.php
 

@@ -20,7 +20,7 @@
  */
 
 return array(
-	'driver' => 'SimpleAuth',
-	'verify_multiple_logins' => false,
-	'salt' => 'iUèl;=$_Iulnfd335j,U',
+    'driver' => 'SimpleAuth',
+    'verify_multiple_logins' => false,
+    'salt' => 'iUèl;=$_Iulnfd335j,U',
 );
