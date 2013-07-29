@@ -26,3 +26,8 @@ fuel/app/modules/*
 fuel/app/modules/!install/*
 fuel/app/modules/!test/*
 fuel/app/modules/!twitter/*
+
+public/assets/css/plugins/!.gitkeep
+public/assets/img/plugins/!.gitkeep
+public/assets/css/plugins/*
+public/assets/img/plugins/*

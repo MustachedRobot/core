@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "4e0988aa5399592f9458c0b102f599db",
+    "hash": "263a2b3847949a3412091b1d1ceeeecd",
     "packages": [
         {
             "name": "composer/installers",
@@ -189,12 +189,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MustachedRobot/calendar.git",
-                "reference": "3f7bc990ac32bde5405ab8e1845f02b5d0f963bc"
+                "reference": "3991f9bab23611896a3527892e3aa136a0497ea9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MustachedRobot/calendar/zipball/3f7bc990ac32bde5405ab8e1845f02b5d0f963bc",
-                "reference": "3f7bc990ac32bde5405ab8e1845f02b5d0f963bc",
+                "url": "https://api.github.com/repos/MustachedRobot/calendar/zipball/3991f9bab23611896a3527892e3aa136a0497ea9",
+                "reference": "3991f9bab23611896a3527892e3aa136a0497ea9",
                 "shasum": ""
             },
             "require": {
@@ -211,7 +211,7 @@
                 "source": "https://github.com/MustachedRobot/calendar/tree/master",
                 "issues": "https://github.com/MustachedRobot/calendar/issues"
             },
-            "time": "2013-07-18 16:52:43"
+            "time": "2013-07-22 23:03:55"
         },
         {
             "name": "mustached-robot/checkin",
@@ -249,15 +249,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MustachedRobot/twitter.git",
-                "reference": "ca0160786fc4e0bf8aebf713b38cbf970d6fa947"
+                "reference": "333dab7127b9222f953e219d76c1a3ef6ff00fa8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MustachedRobot/twitter/zipball/ca0160786fc4e0bf8aebf713b38cbf970d6fa947",
-                "reference": "ca0160786fc4e0bf8aebf713b38cbf970d6fa947",
+                "url": "https://api.github.com/repos/MustachedRobot/twitter/zipball/333dab7127b9222f953e219d76c1a3ef6ff00fa8",
+                "reference": "333dab7127b9222f953e219d76c1a3ef6ff00fa8",
                 "shasum": ""
             },
-            "type": "library",
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "fuel-module",
             "authors": [
                 {
                     "name": "Jérémie Pottier",
@@ -268,7 +271,7 @@
                 "source": "https://github.com/MustachedRobot/twitter/tree/master",
                 "issues": "https://github.com/MustachedRobot/twitter/issues"
             },
-            "time": "2013-07-22 22:20:13"
+            "time": "2013-07-22 23:32:00"
         },
         {
             "name": "mustached-robot/user",
@@ -344,12 +347,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "c35d7f267ffed95060066a6edd610cb23e9e3e50"
+                "reference": "0e63ef04a00fb238ee457708f8b4e8918aa51d7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/c35d7f267ffed95060066a6edd610cb23e9e3e50",
-                "reference": "c35d7f267ffed95060066a6edd610cb23e9e3e50",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/0e63ef04a00fb238ee457708f8b4e8918aa51d7e",
+                "reference": "0e63ef04a00fb238ee457708f8b4e8918aa51d7e",
                 "shasum": ""
             },
             "require": {
@@ -385,7 +388,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-07-15 15:12:47"
+            "time": "2013-07-24 03:16:45"
         }
     ],
     "packages-dev": [

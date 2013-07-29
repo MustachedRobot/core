@@ -1,14 +1,14 @@
 <?php
 
 use Mustached\Message;
-use Mustached\Plugin;
+use Mustached\Plugins;
 
 class Controller_Settings extends \Controller_Admin
 {
 
     public function action_index()
     {
-        $p = new Plugin();
+        $p = new Plugins();
         $this->data['plugins'] = $p->get_plugins();
         return $this->_render('settings/settings');
     }
@@ -26,7 +26,7 @@ class Controller_Settings extends \Controller_Admin
         \Lang::load($plugin.'::'.$plugin.'.yml', $plugin);
         \Config::load($plugin.'::'.$plugin, $plugin);
 
-        $p = new Plugin();
+        $p = new Plugins();
         $p->writeLocalConfig($plugin);
 
         if (!$p->plugin_exists($plugin)) {
@@ -35,9 +35,11 @@ class Controller_Settings extends \Controller_Admin
         
         $fieldset = $p->buildSettingsForm($plugin);
 
+        /*
         if ( ! is_dir($p->get_path($plugin).'/config') or ! is_writable($p->get_path($plugin).'/config')) {
             $this->data['msg'] = Message::error(__('mustached.settings.directoryNotWritable', array('dir' => $p->get_path($plugin).'/config')));
         }
+        */
 
         if (\Input::method() == 'POST') {
             $res = $p->saveSettingsFromForm($plugin, $fieldset);

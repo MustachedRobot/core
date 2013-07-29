@@ -2,7 +2,7 @@
 
 namespace Install;
 use Mustached\Message;
-use Mustached\Plugin;
+use Mustached\Plugins;
 
 class Controller_Public extends \Controller_Front
 {

@@ -43,6 +43,10 @@
             "url":  "git@github.com:MustachedRobot/twitter.git"
         }
     ],
+    "scripts": {
+        "post-install-cmd": "php oil refine installplugins",        
+        "post-update-cmd": "php oil refine installplugins"
+    },
     "suggest": {
         "mustache/mustache": "Allow Mustache templating with the Parser package",
         "smarty/smarty": "Allow Smarty templating with the Parser package",

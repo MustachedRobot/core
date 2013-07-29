@@ -1,6 +1,6 @@
 <?php 
 
-use Mustached\Plugin;
+use Mustached\Plugins;
 
 /**
  * Plugin class tests
@@ -15,7 +15,7 @@ class Test_Plugin extends TestCase
 
 	public function setUp()
 	{
-		$this->p = new Plugin;
+		$this->p = new Plugins;
 		$this->real_plugins = $this->p->get_plugins();
 
 		$this->p->set_plugins(array('test'));
@@ -46,7 +46,7 @@ class Test_Plugin extends TestCase
 	public function test_add_element_on_public_checkin()
 	{
 		
-		$p = new Plugin;
+		$p = new Plugins;
 
 		$fieldset = \Fieldset::forge('checkin');
 		$fieldset->add('reason', '', array('type' => 'text'), array());
