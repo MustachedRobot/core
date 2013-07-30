@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "3fd7025885b87132e9cbb771ad943e68",
+    "hash": "3238143ab9f4aa50356f2d35924a3624",
     "packages": [
         {
             "name": "composer/installers",
@@ -46,7 +46,7 @@
                 {
                     "name": "Kyle Robinson Young",
                     "email": "kyle@dontkry.com",
-                    "homepage": "http://dontkry.com",
+                    "homepage": "https://github.com/shama",
                     "role": "Developer"
                 }
             ],
@@ -257,12 +257,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MustachedRobot/checkin.git",
-                "reference": "0b18f52d20d367c57ebad1aafa86f4167c7f3fe3"
+                "reference": "e277d0400b82c704f696f3a69a3ec8de1b9b6657"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MustachedRobot/checkin/zipball/0b18f52d20d367c57ebad1aafa86f4167c7f3fe3",
-                "reference": "0b18f52d20d367c57ebad1aafa86f4167c7f3fe3",
+                "url": "https://api.github.com/repos/MustachedRobot/checkin/zipball/e277d0400b82c704f696f3a69a3ec8de1b9b6657",
+                "reference": "e277d0400b82c704f696f3a69a3ec8de1b9b6657",
                 "shasum": ""
             },
             "require": {
@@ -279,7 +279,7 @@
                 "source": "https://github.com/MustachedRobot/checkin/tree/master",
                 "issues": "https://github.com/MustachedRobot/checkin/issues"
             },
-            "time": "2013-07-18 16:52:05"
+            "time": "2013-07-30 10:43:36"
         },
         {
             "name": "mustached-robot/twitter",
@@ -287,12 +287,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MustachedRobot/twitter.git",
-                "reference": "30c83de2385e5eed2c4471d4c45ce3bb3481ee0b"
+                "reference": "84a5d0f6b07788987f505af09dc935ec96f3e247"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MustachedRobot/twitter/zipball/30c83de2385e5eed2c4471d4c45ce3bb3481ee0b",
-                "reference": "30c83de2385e5eed2c4471d4c45ce3bb3481ee0b",
+                "url": "https://api.github.com/repos/MustachedRobot/twitter/zipball/84a5d0f6b07788987f505af09dc935ec96f3e247",
+                "reference": "84a5d0f6b07788987f505af09dc935ec96f3e247",
                 "shasum": ""
             },
             "require": {
@@ -300,17 +300,14 @@
                 "dg/twitter-php": "dev-master"
             },
             "type": "fuel-module",
+            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Jérémie Pottier",
                     "email": "jeremie.pottier@gmail.com"
                 }
             ],
-            "support": {
-                "source": "https://github.com/MustachedRobot/twitter/tree/master",
-                "issues": "https://github.com/MustachedRobot/twitter/issues"
-            },
-            "time": "2013-07-30 07:22:22"
+            "time": "2013-07-30 10:51:50"
         },
         {
             "name": "mustached-robot/user",

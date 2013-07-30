@@ -37,10 +37,6 @@
         {
             "type": "vcs",
             "url":  "git@github.com:MustachedRobot/user.git"
-        },
-        {
-            "type": "vcs",
-            "url":  "git@github.com:MustachedRobot/twitter.git"
         }
     ],
     "scripts": {
