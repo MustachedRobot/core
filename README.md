@@ -54,15 +54,13 @@ If you need help or if you want to talk about mustaches, you can do it on twitte
 
 ## Plugins
 
--- Plugins are still under development --
-
-A plugin is an independant module which extend the capabilities of Mustached Robot by interacting at several strategic places of the application.
+A plugin is an independant module which extend the capabilities of Mustached Robot by interacting at several strategic places of the application. Plugins are still under development and we may have to break backward compatibility before they are stable.
 
 With a plugin you can :
 
-	* Add anything you want on a few specific views
- 	* Add form elements and trigger actions according to these elements on the application
-	* Customize the look & feel of your installation
+* Add anything you want on a few specific views
+* Add form elements and trigger actions according to these elements on the application
+* Customize the look & feel of your application
 
 And all that without breaking your Mustached Robot installation (i.e. you will be able to update the core features and the plugin independently).
 
@@ -72,7 +70,7 @@ Plugins are FuelPHP modules. They are integrated in a project through composer.
 
 To developer a plugin your need to:
 
- * create a specific repository for your module with a composer.json file at the root, whose type must be "fuel-module" (see [composer installers documentation](http://getcomposer.org/doc/articles/custom-installers.md)).
+ * create a specific repository for your module with a composer.json file at the root. You must specify the "type" of the package as a "fuel-module" (see [composer installers documentation](http://getcomposer.org/doc/articles/custom-installers.md)). This will allow composer to move the plugin in the right directory of your installation
  * add the plugin as a dependency for the project in the composer.json of the project
 
 As an example, a plugin called twitter is [available on Github](https://github.com/MustachedRobot/twitter) and integrated in the default project.
@@ -90,12 +88,18 @@ We use .yml by convention.
 
 #### Configuration
 
-You can configure your plugin by creating a "config" folder in your module and a .php file with the same name as your plugin. This config file will automatically generate a settings form for the administrators of the coworking space.
+You can ask for configuration parameters to the application admin by creating a "config" folder in your module and a .php file with the same name as your plugin. This config file will automatically generate a settings form for the administrators of the coworking space.
 
-If the user changes the default configuration, it will be saved into his local installation configuration file (/fuel/app/config/mustached.php).
+Your config file must follow a few conventions:
 
-Example of a file location (for the twitter plugin) : ```/modules/twitter/config/twitter.php```.
-Here is an example of a config file :
+* it must be an associative array
+* the keys of the array must be the name of the parameter
+* the value of the array must be another array, containing three key/value pairs:
+** 'label': The label that will be displayed on the form
+** 'type': The type of the field (see [FuelPHP form type](http://docs.fuelphp.com/classes/form.html)
+** 'value': The default value of the parameter
+
+Here is an example of a [config file](https://github.com/MustachedRobot/twitter/blob/master/config/twitter.php) for the Twitter plugin:
 
 ```
 'consumerKey' => 
@@ -112,7 +116,7 @@ Here is an example of a config file :
 	),
 ``` 
 
-In this example, the keys ('consumerKey' and 'consumerSecret') are the settings name, the label is the label that will be displayed to the administrator of the config form. The 'type' is the type of the value, used to display the field type in the form (see [FuelPHP form type](http://docs.fuelphp.com/classes/form.html)) The 'value' will be updated when the administrator submits the form (you can add default values there).
+If the user changes the default configuration, it will be saved into his local installation configuration file (/fuel/app/config/mustached.php), so he will be able to fully update the plugin without deleting his own parameters.
 
 If some users have already installed your plugin and, in a future version you decide to use some extra settings, the new settings will be made available to the user but they will keep their previous settings saved locally.
 
@@ -120,8 +124,8 @@ To access a config parameter of the plugin, use the function:
 
 	\Mustached\Plugin::getConfig($pluginName, $configName)
 
-	* pluginName: name of the plugin
-	* configName: name of the config parameter (use "." as an array separator)
+* pluginName: name of the plugin
+* configName: name of the config parameter (use "." as an array separator)
 
 This function will return the parameter set by the user or, if none hase been set, the default parameter of the plugin. You should always use this function instead of the FuelPHP core function such as \Config::get();
 
@@ -147,11 +151,11 @@ This method send one argument $options with a 'fieldset' key containing the fiel
 
 ### Themes
 
-A plugin can be used as a Theme for part or the totality of the application. 
+A plugin can be used as a Theme for part or the totality of the application. A [theme example](https://github.com/MustachedRobot/themeExample) is available on Github.
 
 #### CSS
 
-To load a css file in the whole application, add a Theme class in your module and add a "getCss" function returning the path of the css file and the version number of this file:
+To load a CSS file in the whole application, add a Theme class in your module and add a "getCss" function returning the path of the CSS file and the version number of this file:
 
 	public function getCss()
     {                   
@@ -161,7 +165,7 @@ To load a css file in the whole application, add a Theme class in your module an
         );
     }
 
-At each update of the plugin from the user (through composer), this file will be merged into the main project.
+At each update of the plugin from the user (through composer), this file will be copied into the main project (in the /public/assets/css/plugins/[plugin_name]/ folder) and will be loaded in the application.
 
 #### Images
 
