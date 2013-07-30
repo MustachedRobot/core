@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "263a2b3847949a3412091b1d1ceeeecd",
+    "hash": "3fd7025885b87132e9cbb771ad943e68",
     "packages": [
         {
             "name": "composer/installers",
@@ -76,6 +76,44 @@
                 "zend"
             ],
             "time": "2013-06-29 16:45:39"
+        },
+        {
+            "name": "dg/twitter-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dg/twitter-php.git",
+                "reference": "3b381bfd186d5fc2a80f4e25be9ff2331ec8746e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dg/twitter-php/zipball/3b381bfd186d5fc2a80f4e25be9ff2331ec8746e",
+                "reference": "3b381bfd186d5fc2a80f4e25be9ff2331ec8746e",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "http://davidgrudl.com"
+                }
+            ],
+            "description": "Small and easy Twitter wrapper for PHP.",
+            "homepage": "https://github.com/dg/twitter-php",
+            "keywords": [
+                "oauth",
+                "twitter"
+            ],
+            "time": "2013-06-17 14:42:46"
         },
         {
             "name": "fuelphp/upload",
@@ -249,16 +287,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MustachedRobot/twitter.git",
-                "reference": "333dab7127b9222f953e219d76c1a3ef6ff00fa8"
+                "reference": "ab23994070adcc5446b114d7cc9995d8b1216fab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MustachedRobot/twitter/zipball/333dab7127b9222f953e219d76c1a3ef6ff00fa8",
-                "reference": "333dab7127b9222f953e219d76c1a3ef6ff00fa8",
+                "url": "https://api.github.com/repos/MustachedRobot/twitter/zipball/ab23994070adcc5446b114d7cc9995d8b1216fab",
+                "reference": "ab23994070adcc5446b114d7cc9995d8b1216fab",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "~1.0"
+                "composer/installers": "~1.0",
+                "dg/twitter-php": "dev-master"
             },
             "type": "fuel-module",
             "authors": [
@@ -271,7 +310,7 @@
                 "source": "https://github.com/MustachedRobot/twitter/tree/master",
                 "issues": "https://github.com/MustachedRobot/twitter/issues"
             },
-            "time": "2013-07-22 23:32:00"
+            "time": "2013-07-30 06:04:58"
         },
         {
             "name": "mustached-robot/user",
