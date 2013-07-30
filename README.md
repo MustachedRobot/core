@@ -1,6 +1,6 @@
 # Mustached Robot
 
-[![Build Status](https://secure.travis-ci.org/cantineNantes/mustached-robot.png)](http://travis-ci.org/cantineNantes/mustached-robot)
+[![Build Status](https://api.travis-ci.org/MustachedRobot/core.png)](http://travis-ci.org/cantineNantes/mustached-robot)
 
 ## Description
 
