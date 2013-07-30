@@ -38,7 +38,7 @@ See the [install documentation](https://github.com/MustachedRobot/core/wiki/Inst
 
 ## Documentation 
 
-You want to get involved? See the [Developers documentation](https://github.com/cantineNantes/mustached-robot/wiki/Developers-documentation)
+You want to get involved? See the [Developers documentation](https://github.com/MustachedRobot/core/wiki/Developers-documentation)
 
 ## API documentation 
 
