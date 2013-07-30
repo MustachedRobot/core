@@ -287,12 +287,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MustachedRobot/twitter.git",
-                "reference": "ab23994070adcc5446b114d7cc9995d8b1216fab"
+                "reference": "30c83de2385e5eed2c4471d4c45ce3bb3481ee0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MustachedRobot/twitter/zipball/ab23994070adcc5446b114d7cc9995d8b1216fab",
-                "reference": "ab23994070adcc5446b114d7cc9995d8b1216fab",
+                "url": "https://api.github.com/repos/MustachedRobot/twitter/zipball/30c83de2385e5eed2c4471d4c45ce3bb3481ee0b",
+                "reference": "30c83de2385e5eed2c4471d4c45ce3bb3481ee0b",
                 "shasum": ""
             },
             "require": {
@@ -310,7 +310,7 @@
                 "source": "https://github.com/MustachedRobot/twitter/tree/master",
                 "issues": "https://github.com/MustachedRobot/twitter/issues"
             },
-            "time": "2013-07-30 06:04:58"
+            "time": "2013-07-30 07:22:22"
         },
         {
             "name": "mustached-robot/user",

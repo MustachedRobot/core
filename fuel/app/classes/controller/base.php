@@ -26,12 +26,15 @@ class Controller_Base extends Controller
         $p = new \Mustached\Plugins;
         $csss = $p->getCss();
 
-        foreach ($csss as $plugin => $css) {
-            $css_path = DOCROOT.'assets/css/'.$plugin.DIRECTORY_SEPARATOR.$css['version'].'.css';
-            if (file_exists($css_path)) {
-                \Casset::css($plugin.DIRECTORY_SEPARATOR.$css['version'].'.css');                
-            }
+        if(!empty($csss)) {
+            foreach ($csss as $plugin => $css) {
+                $css_path = DOCROOT.'assets/css/'.$plugin.DIRECTORY_SEPARATOR.$css['version'].'.css';
+                if (file_exists($css_path)) {
+                    \Casset::css($plugin.DIRECTORY_SEPARATOR.$css['version'].'.css');                
+                }
+            }    
         }
+        
 
         \Casset::js('jquery-1.7.2.min.js');
         \Casset::js('jquery.autocomplete-min.js');
