@@ -56,7 +56,7 @@ return array(
 		</div>",
 	'field_checkbox_template'      => "
 		<label class=\"checkbox\">
-	    	<input type=\"checkbox\"> {label}
+	    	{field} {label}
 	  	</label>",
 	'multi_field_template'  => "\t\t<tr>\n\t\t\t<td class=\"{error_class}\">{group_label}{required}</td>\n\t\t\t<td class=\"{error_class}\">{fields}\n\t\t\t\t{field} {label}<br />\n{fields}<span>{description}</span>\t\t\t{error_msg}\n\t\t\t</td>\n\t\t</tr>\n",
 	'error_template'        => '<span>{error_msg}</span>',
