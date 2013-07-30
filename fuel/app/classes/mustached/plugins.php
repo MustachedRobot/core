@@ -52,14 +52,15 @@ class Plugins
             \Module::load($plugin);
             $object_name = "\\".ucfirst($plugin)."\\".ucfirst($class);
 
-            $object = new $object_name;
-            
-            if (method_exists($object, $method)) {
-                try  {
-                    $return[$plugin] = $object->$method($params);                       
-                } catch(Exception $e) {
-                    $return[$plugin] = array('error' => $e->getMessage());
-                    // Log the error and the plugin associated with it
+            if (class_exists($object_name)) {
+                $object = new $object_name;
+                if (method_exists($object, $method)) {                
+                    try  {
+                        $return[$plugin] = $object->$method($params);                       
+                    } catch(\Exception $e) {
+                        $return[$plugin] = array('error' => $e->getMessage());                        
+                        // Log the error and the plugin associated with it
+                    }
                 }
             }
         }
