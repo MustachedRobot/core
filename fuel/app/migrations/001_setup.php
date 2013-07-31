@@ -73,6 +73,17 @@ class Setup
             'utf8_unicode_ci'            
         );
 
+        // Insert convention value for coworking
+        $query = \DB::insert('reasons')
+            ->set(
+                array(
+                    'name' => 'Coworking',
+                    'sentence' => 'est venu coworker',
+                    'order' => 1,
+                )
+            )
+            ->execute();
+
         \DBUtil::create_table(
             'skills', 
             array(
