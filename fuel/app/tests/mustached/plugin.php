@@ -7,7 +7,7 @@ use Mustached\Plugins;
  *
  * @group Plugin
  */
-class Test_Plugin extends TestCase
+class Test_Plugins extends TestCase
 {
 
 	private $p;
